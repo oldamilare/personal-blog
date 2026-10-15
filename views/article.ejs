@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+<article>
+  <h1><%= article.title %></h1>
+  <p class="meta">Published on <time datetime="<%= article.date %>"><%= formatDate(article.date) %></time></p>
+  <div class="body">
+    <% paragraphs.forEach((p) => { %><p><%= p %></p>
+    <% }) %>
+  </div>
+</article>
+<p class="back"><a href="/">← All articles</a></p>
+<%- include('partials/footer') %>

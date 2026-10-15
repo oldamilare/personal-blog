@@ -1,0 +1,5 @@
+{
+  "title": "What I learned building a CLI",
+  "content": "Small projects teach more than big plans. A command line tool is a good example: there's input to check, files to read and write, and errors to explain in plain words.\n\nThe habit that helped most was running the program after every small change instead of writing everything first.",
+  "date": "2026-10-08"
+}

@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+<h1><%= isNew ? 'New article' : 'Edit article' %></h1>
+<% if (errors.length) { %>
+  <div class="notice error" role="alert">
+    <ul><% errors.forEach((e) => { %><li><%= e %></li><% }) %></ul>
+  </div>
+<% } %>
+<form method="post" action="<%= isNew ? '/admin/new' : '/admin/edit/' + id %>" class="card">
+  <input type="hidden" name="_csrf" value="<%= csrf %>">
+
+  <label for="title">Title</label>
+  <input id="title" name="title" type="text" maxlength="150" value="<%= values.title %>" required>
+
+  <label for="date">Date of publication</label>
+  <input id="date" name="date" type="date" value="<%= values.date %>" required>
+
+  <label for="content">Content</label>
+  <textarea id="content" name="content" rows="16" required><%= values.content %></textarea>
+  <p class="hint">Leave a blank line between paragraphs.</p>
+
+  <div class="form-actions">
+    <button type="submit"><%= isNew ? 'Publish' : 'Save changes' %></button>
+    <a href="/admin">Cancel</a>
+  </div>
+</form>
+<%- include('partials/footer') %>

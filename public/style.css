@@ -1,0 +1,82 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #222;
+  background: #fbfaf7;
+}
+
+.wrap { max-width: 42rem; margin: 0 auto; padding: 0 1.25rem; }
+
+a { color: #1a4f8b; }
+a:hover { color: #0b2d54; }
+
+h1 { font-size: 1.9rem; line-height: 1.25; margin: 2rem 0 0.75rem; }
+
+.site-header { border-bottom: 1px solid #e2dfd6; }
+.site-header .wrap { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; padding-bottom: 1rem; }
+.brand { font-weight: bold; font-size: 1.1rem; color: #222; text-decoration: none; }
+nav { display: flex; gap: 1.25rem; align-items: center; font-family: system-ui, sans-serif; font-size: 0.95rem; }
+nav form { margin: 0; }
+
+.site-footer { margin: 4rem auto 2rem; font-family: system-ui, sans-serif; font-size: 0.85rem; }
+.site-footer a { color: #777; }
+
+.article-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+.article-list li { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; padding: 0.85rem 0; border-bottom: 1px solid #e8e5dc; }
+.article-list a { font-size: 1.15rem; text-decoration: none; }
+.article-list a:hover { text-decoration: underline; }
+.article-list time, .meta { font-family: system-ui, sans-serif; font-size: 0.85rem; color: #777; white-space: nowrap; }
+.meta { margin: 0 0 2rem; }
+
+.body p { margin: 0 0 1.2rem; white-space: pre-line; }
+.back { margin-top: 3rem; font-family: system-ui, sans-serif; font-size: 0.95rem; }
+.empty { color: #777; }
+
+/* forms and admin */
+form.card { background: #fff; border: 1px solid #e2dfd6; border-radius: 6px; padding: 1.25rem; margin-top: 1rem; }
+label { display: block; margin: 1rem 0 0.25rem; font-family: system-ui, sans-serif; font-size: 0.9rem; font-weight: 600; }
+label:first-of-type { margin-top: 0; }
+input[type="text"], input[type="password"], input[type="date"], textarea {
+  width: 100%; padding: 0.55rem 0.65rem; font: inherit; font-size: 1rem;
+  border: 1px solid #bdb9ac; border-radius: 4px; background: #fff;
+}
+input[type="date"] { width: auto; }
+textarea { resize: vertical; line-height: 1.5; }
+.hint { margin: 0.35rem 0 0; font-family: system-ui, sans-serif; font-size: 0.8rem; color: #777; }
+
+button, .button {
+  display: inline-block; padding: 0.55rem 1.1rem; font-family: system-ui, sans-serif; font-size: 0.95rem;
+  color: #fff; background: #222; border: 0; border-radius: 4px; cursor: pointer; text-decoration: none;
+}
+button:hover, .button:hover { background: #000; color: #fff; }
+button.link { padding: 0; color: #1a4f8b; background: none; text-decoration: underline; }
+button.link:hover { color: #0b2d54; background: none; }
+.danger-button { background: #a32a2a; }
+.danger-button:hover { background: #7f1f1f; }
+
+.form-actions { display: flex; gap: 1.25rem; align-items: center; margin-top: 1.25rem; font-family: system-ui, sans-serif; }
+.title-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 1.25rem; font-family: system-ui, sans-serif; font-size: 0.95rem; }
+th { text-align: left; font-size: 0.8rem; color: #777; text-transform: uppercase; letter-spacing: 0.04em; }
+th, td { padding: 0.65rem 0.5rem; border-bottom: 1px solid #e8e5dc; }
+.nowrap { white-space: nowrap; }
+.actions { text-align: right; }
+.actions a { margin-left: 1rem; }
+a.danger { color: #a32a2a; }
+
+.notice { margin: 1rem 0; padding: 0.75rem 1rem; border-radius: 4px; font-family: system-ui, sans-serif; font-size: 0.95rem; }
+.notice ul { margin: 0; padding-left: 1.1rem; }
+.notice.ok { background: #e7f0e4; border: 1px solid #bad2b3; }
+.notice.error { background: #f7e4e1; border: 1px solid #dfb4ad; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (max-width: 34rem) {
+  .article-list li { flex-direction: column; gap: 0.1rem; }
+  .actions a { display: inline-block; margin: 0 0 0 0.75rem; }
+}

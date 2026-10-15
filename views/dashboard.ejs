@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+<div class="title-row">
+  <h1>Dashboard</h1>
+  <a class="button" href="/admin/new">New article</a>
+</div>
+<% if (message) { %><p class="notice ok" role="status"><%= message %></p><% } %>
+<% if (articles.length === 0) { %>
+  <p class="empty">No articles yet. Write your first one.</p>
+<% } else { %>
+  <table>
+    <thead>
+      <tr><th>Title</th><th>Published</th><th><span class="sr-only">Actions</span></th></tr>
+    </thead>
+    <tbody>
+      <% articles.forEach((a) => { %>
+      <tr>
+        <td><a href="/article/<%= a.id %>"><%= a.title %></a></td>
+        <td class="nowrap"><%= formatDate(a.date) %></td>
+        <td class="actions nowrap">
+          <a href="/admin/edit/<%= a.id %>">Edit</a>
+          <a href="/admin/delete/<%= a.id %>" class="danger">Delete</a>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
+<%- include('partials/footer') %>

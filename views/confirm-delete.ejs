@@ -1,0 +1,9 @@
+<%- include('partials/header') %>
+<h1>Delete this article?</h1>
+<p>“<%= article.title %>” will be removed for good.</p>
+<form method="post" action="/admin/delete/<%= article.id %>" class="form-actions">
+  <input type="hidden" name="_csrf" value="<%= csrf %>">
+  <button type="submit" class="danger-button">Yes, delete it</button>
+  <a href="/admin">Cancel</a>
+</form>
+<%- include('partials/footer') %>
